@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: Lojas
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/lojas
+    username: root
+    password:
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
