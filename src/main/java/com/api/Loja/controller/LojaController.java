@@ -27,7 +27,7 @@ public class LojaController {
 
 
     @PostMapping("/salvar")
-    public ResponseEntity<?> salvar(@RequestBody @Valid ProdutoDto dto){
+    public ResponseEntity<?> salvar(@RequestBody @Valid LojaDto dto){
 
         LojaModel lojaSalva = lojaService.create(dto);
 

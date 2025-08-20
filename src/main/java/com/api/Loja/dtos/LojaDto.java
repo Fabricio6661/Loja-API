@@ -1,7 +1,9 @@
 package com.api.Loja.dtos;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 
+@Data
 public class LojaDto {
 
     @NotBlank(message = "O nome é obrigatório")
