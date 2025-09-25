@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
@@ -50,7 +50,7 @@ public class ProdutoController {
         }
     }
 
-    @DeleteMapping("/deletar/{id}")
+    @PostMapping("/deletar/{id}")
     public ResponseEntity<String> excluir(@PathVariable(value = "id")UUID id){
         try {
             produtoService.delete(id);
