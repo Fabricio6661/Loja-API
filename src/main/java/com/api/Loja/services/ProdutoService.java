@@ -6,6 +6,7 @@ import com.api.Loja.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -21,6 +22,10 @@ public class ProdutoService {
         produto.setDescricao(dto.getDescricao());
         produto.setPreco(dto.getPreco());
         return produtoRepository.save(produto);
+    }
+
+    public ProdutoModel salvar(ProdutoModel produtoModel) {
+        return produtoRepository.save(produtoModel);
     }
 
 
@@ -47,5 +52,9 @@ public class ProdutoService {
     public List<ProdutoModel> buscarPorNome(String nomeBusca) {
         return produtoRepository.findByNomeContainsIgnoreCase(nomeBusca);
 
+    }
+
+    public Optional<ProdutoModel> findById(UUID id) {
+        return produtoRepository.findById(id);
     }
 }

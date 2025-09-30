@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+import java.util.UUID;
+
 
 @Data
 public class ProdutoDto {
@@ -17,4 +19,7 @@ public class ProdutoDto {
     @NotNull(message = "O preço é obrigatório")
     @Min(value = 0, message = "O preço deve ser maior que zero")
     private double preco;
+
+    @NotNull(message = "Loja está vazio")
+    private UUID lojaId;
 }

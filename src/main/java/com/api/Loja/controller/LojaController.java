@@ -53,7 +53,7 @@ public class LojaController {
         }
     }
 
-    @DeleteMapping("/deletar/{id}")
+    @PostMapping("/deletar/{id}")
     public ResponseEntity<String> excluir(@PathVariable(value = "id")UUID id){
         try {
             lojaService.delete(id);
